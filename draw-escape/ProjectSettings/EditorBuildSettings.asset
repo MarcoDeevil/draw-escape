@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 914ebb6ab65028043a7796c3058faf4f
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/AfterMatch.unity
+    guid: f8dccd3ee76746b4595fce8dbeec27a4
+  - enabled: 1
+    path: Assets/Scenes/AfterMatchWin.unity
+    guid: 8b8ef03e4a137f4458e730a89460e72f
+  - enabled: 1
+    path: Assets/Scenes/JAPIERDOLE.unity
+    guid: 710976b8277027f45a8c467a53a73d46
+  - enabled: 1
+    path: Assets/Scenes/dawajGosciu.unity
+    guid: 638efc0423681274ea044f5711a24bb1
   m_configObjects: {}

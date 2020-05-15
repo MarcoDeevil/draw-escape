@@ -8,6 +8,8 @@ TagManager:
   - blue_wall
   - green_wall
   - black_wall
+  - bullet
+  - enemy_bullet
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 //Dobra, to są początki i wiele rzeczy będzie poprawiane, ale na pewno potrzeba nam cos takiego jak post manager 
@@ -13,26 +14,53 @@ public class BulletManager : MonoBehaviour
     public float BLUE = 1;
     public float GREEN = 2;
 
+    public static BulletManager instance;
+    AudioManager audioManager;
+
     public Image red_bullet;
     public Image blue_bullet;
     public Image green_bullet;
 
-    public float selected_bullet;
+    public float time_in_game = 0;
+    public float laczny_czas = 0;
+    public float procenty = 0;
+    
 
-   private void Update() {
+    public float selected_bullet ;
 
-        red_bullet.rectTransform.localScale = new Vector2(0.4f, 0.4f);
-        blue_bullet.rectTransform.localScale = new Vector2(0.4f, 0.4f);
-        green_bullet.rectTransform.localScale = new Vector2(0.4f, 0.4f);
+    void Start()
+    {
+        audioManager = AudioManager.instance;
+    }
+     void Awake() {
+        //DontDestroyOnLoad(gameObject);
+        if(instance != null){
+            Debug.LogError("More than one AudioManager in the scene");
+        }
+        else {
+            instance = this;
+        }
+    }
 
-       if(selected_bullet == RED){
-           red_bullet.rectTransform.localScale = new Vector2(0.8f, 0.8f);
-       }
-       else if(selected_bullet == BLUE){
-           blue_bullet.rectTransform.localScale = new Vector2(0.8f, 0.8f); 
-       }
-        else if(selected_bullet == GREEN){
-           green_bullet.rectTransform.localScale = new Vector2(0.8f, 0.8f);
-       }
-   }
+    private void Update() {
+        if(SceneManager.GetActiveScene().name == "Main"){
+                time_in_game += Time.deltaTime; 
+        
+                red_bullet.rectTransform.localScale = new Vector2(1f, 1f);
+                blue_bullet.rectTransform.localScale = new Vector2(1f, 1f);
+                green_bullet.rectTransform.localScale = new Vector2(1f, 1f);
+
+            if(selected_bullet == RED){
+                red_bullet.rectTransform.localScale = new Vector2(2f, 2f);
+            }
+            else if(selected_bullet == BLUE){
+            blue_bullet.rectTransform.localScale = new Vector2(2f, 2f); 
+        }
+            else if(selected_bullet == GREEN){
+            green_bullet.rectTransform.localScale = new Vector2(2f, 2f);
+        }
+        }
+    }
+
+    
 }

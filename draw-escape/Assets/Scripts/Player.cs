@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
-    public BulletManager bulletManager;
+    public static Player instance;
+    public gameMan bulletManager;
+    BulletManager realbullet;
     public Rigidbody2D rb;
     public float rotation_speed = 180, moveSpeed = 10f, cd_shoot = 2f;
     Vector2 movement;
@@ -16,15 +18,26 @@ public class Player : MonoBehaviour {
     float shoot, selected_bullet = 0;
     float current_cd_shoot;
 
+     void Awake() {
+        if(instance != null){
+            Debug.LogError("More than one AudioManager in the scene");
+        }
+        else {
+            instance = this;
+        }
+    }
     private void Start() {
-
+        bulletManager = gameMan.instance;
+        realbullet = BulletManager.instance;
     }
 
     void FixedUpdate() {
         Movement();
     }
+
+
     void Update() {
-        bulletManager.selected_bullet = selected_bullet;
+        realbullet.selected_bullet = selected_bullet;
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -40,7 +53,12 @@ public class Player : MonoBehaviour {
         if(shoot == 1 && current_cd_shoot <= 0){
             GameObject bullet = Instantiate(bullets[(int)selected_bullet], cel.transform.position , cel.transform.rotation);
             bullet.GetComponent<Bullet>().bullet_number = selected_bullet;
+             List<Component> colliders = new List<Component>();
+
+     
             Physics2D.IgnoreCollision(bullet.GetComponent<BoxCollider2D>(), GetComponent<CircleCollider2D>());
+            
+           
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(cel.transform.right * 10, ForceMode2D.Impulse);
             current_cd_shoot = cd_shoot;
@@ -60,12 +78,19 @@ public class Player : MonoBehaviour {
         rb.MovePosition(rb.position + movement * moveSpeed*Time.fixedDeltaTime); 
     }
      private void OnCollisionEnter2D(Collision2D collision) {
-         if(collision.gameObject.tag == "Enemy"){
-             gameObject.GetComponent<AudioSource>().Play();       
+         if(collision.gameObject.tag == "enemy_bullet"){
+            Destroy(collision.gameObject);
          }
+         if(bulletManager.trudnosc == 1){
+
+         }
+         bulletManager.StartCoroutine(bulletManager.Wait());
+         Destroy(gameObject);
      }
-       float nfmod(float a, float b)
+
+    float nfmod(float a, float b)
     {
         return a - b * Mathf.Floor(a / b);
-    }   
+    }  
+    
 }

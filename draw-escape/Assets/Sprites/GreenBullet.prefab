@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5326184428338737161}
   - component: {fileID: 2881293698329895712}
   - component: {fileID: 867549942742820037}
-  - component: {fileID: 7629258497199610418}
+  - component: {fileID: 2564218342820820636}
   m_Layer: 0
   m_Name: GreenBullet
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 795028978750545330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 3211074861185397425}
   m_Father: {fileID: 0}
@@ -68,7 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletManager: {fileID: 0}
---- !u!61 &7629258497199610418
+  bullet_number: 0
+--- !u!61 &2564218342820820636
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,7 +82,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08629893, y: 0.005567789}
+  m_Offset: {x: 0.19876392, y: 0.0056642946}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -92,7 +93,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.33744732, y: 0.253932}
+  m_Size: {x: 0.22879568, y: 0.023068778}
   m_EdgeRadius: 0
 --- !u!1 &7244702337038870410
 GameObject:

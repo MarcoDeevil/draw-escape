@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4942250234862934350}
   - component: {fileID: 1665774257055570377}
   - component: {fileID: 1748872979728052542}
-  - component: {fileID: 2829361440214066349}
+  - component: {fileID: 3604264031735084979}
   m_Layer: 0
   m_Name: RedBullet
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7618549179301847466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0.008, y: 0, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 3024897208951814500}
   m_Father: {fileID: 0}
@@ -68,7 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletManager: {fileID: 0}
---- !u!61 &2829361440214066349
+  bullet_number: 0
+--- !u!61 &3604264031735084979
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,7 +82,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08629893, y: 0.005567789}
+  m_Offset: {x: 0.19876392, y: 0.0056642946}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -92,7 +93,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.33744732, y: 0.253932}
+  m_Size: {x: 0.22879568, y: 0.023068778}
   m_EdgeRadius: 0
 --- !u!1 &8444095639706957568
 GameObject:

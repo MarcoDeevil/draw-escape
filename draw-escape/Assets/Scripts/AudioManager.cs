@@ -15,6 +15,7 @@ public class Sound {
     [Range(0f, 0.5f)]
     public float randomPitch = 0.1f;
     public AudioClip clip;
+   
 
     private AudioSource source;
 
@@ -33,9 +34,10 @@ public class AudioManager : MonoBehaviour
 {
 
     public static AudioManager instance;
-
+    public float trudnosc = 0;
     [SerializeField]
     Sound[] sounds;
+    
 
     void Awake() {
         if(instance != null){
@@ -53,6 +55,10 @@ public class AudioManager : MonoBehaviour
             //_go.transform.SetParent(this.transform);
             sounds[i].SetSource(_go.AddComponent<AudioSource>());
         }
+    }
+    void Update()
+    {
+        
     }
 
     public void PlaySound(string _name){
