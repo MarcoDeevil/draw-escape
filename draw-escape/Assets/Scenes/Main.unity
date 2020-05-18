@@ -2395,7 +2395,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812098873}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.570007, y: -4.76001, z: 0}
+  m_LocalPosition: {x: 17.8, y: -4.76001, z: 0}
   m_LocalScale: {x: 0.63172, y: 0.63172, z: 0.63172}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2593,15 +2593,15 @@ MonoBehaviour:
   trudnosc: 0
   sounds:
   - name: wall_hit
-    volume: 0.528
-    pitch: 1.053
-    randomVolume: 0.1
+    volume: 0.165
+    pitch: 0.983
+    randomVolume: 0.065
     randomPitch: 0.131
     clip: {fileID: 8300000, guid: 7aef9791133d3bd40a825f7acda57c36, type: 3}
   - name: bad_wall_hit
-    volume: 0.518
-    pitch: 1.053
-    randomVolume: 0.1
+    volume: 0.12
+    pitch: 0.998
+    randomVolume: 0.05
     randomPitch: 0.131
     clip: {fileID: 8300000, guid: 68009e0e4bb49f742abd1e3927eafe3c, type: 3}
 --- !u!4 &841304474
