@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+
 public class TextSetter : MonoBehaviour
 {
     // Start is called before the first frame update
